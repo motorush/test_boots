@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :resources_tables
+  map.resources :resources_tables, :has_many => :resources_fields
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -34,6 +34,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"
+  map.root :controller => 'resources_tables'
 
   # See how all your routes lay out with "rake routes"
 

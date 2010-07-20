@@ -1,0 +1,13 @@
+<p>
+  <b>Resources table:</b>
+  <%=h @resources_field.resources_table_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @resources_field.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_resources_table_resources_field_path(@resources_table, @resources_field) %> |
+<%= link_to 'Back', resources_table_resources_fields_path(@resources_table) %>

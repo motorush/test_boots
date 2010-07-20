@@ -1,0 +1,23 @@
+<h1>Listing resources_fields</h1>
+
+<table>
+  <tr>
+    <th>Resources table</th>
+    <th>Name</th>
+  </tr>
+
+<% @resources_fields.each do |resources_field| %>
+  <tr>
+    <td><%=h resources_field.resources_table_id %></td>
+    <td><%=h resources_field.name %></td>
+    <td><%= link_to 'Show', resources_table_resources_field_path(@resources_table, resources_field) %></td>
+    <td><%= link_to 'Edit', edit_resources_table_resources_field_path(@resources_table, resources_field) %></td>
+    <td><%= link_to 'Destroy', resources_table_resources_field_path(@resources_table, resources_field), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Resources Field', new_resources_table_resources_field_path(@resources_table) %> |
+<%= link_to 'Back to Resources Table', @resources_table %>

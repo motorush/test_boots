@@ -2,7 +2,13 @@
   <b>Name:</b>
   <%=h @resources_table.name %>
 </p>
-
-
+<h2>Fields</h2>
+<% @resources_table.resources_fields.each do |f| %>
+  <b>Field Name:</b>
+  <%=h f.name %>
+  <br/>
+<% end %>
+<br/>
 <%= link_to 'Edit', edit_resources_table_path(@resources_table) %> |
-<%= link_to 'Back', resources_tables_path %>
+<%= link_to 'Back', resources_tables_path %> |
+<%= link_to 'Manage Resources Fields', resources_table_resources_fields_path(@resources_table) %>

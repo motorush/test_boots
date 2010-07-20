@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100720001538) do
+ActiveRecord::Schema.define(:version => 20100720002535) do
+
+  create_table "resources_fields", :force => true do |t|
+    t.string   "name"
+    t.integer  "resources_table_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "resources_tables", :force => true do |t|
     t.string   "name"
