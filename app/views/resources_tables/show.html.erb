@@ -4,6 +4,10 @@
 </p>
 <h2>Fields</h2>
 <% @resources_table.resources_fields.each do |f| %>
+  <b>ID</b>
+  <%= f.id %>
+  <b>Resource Table ID</b>
+  <%= f.resources_table_id %>
   <b>Field Name:</b>
   <%=h f.name %>
   <br/>
