@@ -1,0 +1,16 @@
+<h1>Editing resources_data</h1>
+
+<% form_for(@resources_data) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @resources_data %> |
+<%= link_to 'Back', resources_datas_path %>
