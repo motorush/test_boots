@@ -1,0 +1,20 @@
+<h1>Listing resources_tables</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @resources_tables.each do |resources_table| %>
+  <tr>
+    <td><%=h resources_table.name %></td>
+    <td><%= link_to 'Show', resources_table %></td>
+    <td><%= link_to 'Edit', edit_resources_table_path(resources_table) %></td>
+    <td><%= link_to 'Destroy', resources_table, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New resources_table', new_resources_table_path %>
