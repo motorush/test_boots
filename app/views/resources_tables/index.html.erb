@@ -7,10 +7,12 @@
 
 <% @resources_tables.each do |resources_table| %>
   <tr>
+  </tr>
+  <tr>
     <td><%=h resources_table.name %></td>
     <td><%= link_to 'Show', resources_table %></td>
     <td><%= link_to 'Edit', edit_resources_table_path(resources_table) %></td>
-    <td><%= link_to 'Destroy', resources_table, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', resources_table, :confirm => 'This will delete the table and its associations. Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

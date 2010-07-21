@@ -935,3 +935,1380 @@ Rendering template within layouts/resources_fields
 Rendering resources_fields/index
   [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 4) [0m
 Completed in 23ms (View: 11, DB: 1) | 200 OK [http://localhost/resources_tables/4/resources_fields]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 09:18:35) [GET]
+  [4;36;1mResourcesTable Load (1.1ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 96ms (View: 25, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:18:39) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#new (for 127.0.0.1 at 2010-07-21 09:18:47) [GET]
+  Parameters: {"resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.4ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/new
+Completed in 29ms (View: 14, DB: 0) | 200 OK [http://localhost/resources_tables/2/resources_fields/new]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:20:26) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.6ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+
+ActionView::TemplateError (undefined local variable or method `resources_field' for #<ActionView::Base:0x7f4d2b43dad0>) on line #13 of app/views/resources_tables/show.html.erb:
+10:   <%= f.resources_table_id %>
+11:   <b>Field Name:</b>
+12:   <%=h f.name %>
+13:   <%= link_to 'Edit', edit_resources_table_resources_field_path(@resources_table, resources_field) %>
+14:   <br/>
+15: <% end %>
+16: <br/>
+
+    app/views/resources_tables/show.html.erb:13
+    app/views/resources_tables/show.html.erb:6
+    app/controllers/resources_tables_controller.rb:18:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:20:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.4ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#edit (for 127.0.0.1 at 2010-07-21 09:20:36) [GET]
+  Parameters: {"id"=>"7", "resources_table_id"=>"2"}
+  [4;36;1mResourcesTable Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;35;1mResourcesField Load (0.3ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 7 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/edit
+Completed in 25ms (View: 12, DB: 1) | 200 OK [http://localhost/resources_tables/2/resources_fields/7/edit]
+
+
+Processing ResourcesFieldsController#update (for 127.0.0.1 at 2010-07-21 09:20:41) [PUT]
+  Parameters: {"commit"=>"Update", "resources_field"=>{"name"=>"Email", "resources_table_id"=>"2"}, "authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "id"=>"7", "resources_table_id"=>"2"}
+  [4;36;1mResourcesTable Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;35;1mResourcesField Load (0.3ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 7) [0m
+  [4;36;1mResourcesField Update (0.7ms)[0m   [0;1mUPDATE "resources_fields" SET "updated_at" = '2010-07-21 01:20:41', "name" = 'Email' WHERE "id" = 7[0m
+Redirected to http://localhost:3000/resources_tables/2/resources_fields/7?notice=ResourcesField+was+successfully+updated.
+Completed in 171ms (DB: 1) | 302 Found [http://localhost/resources_tables/2/resources_fields/7]
+
+
+Processing ResourcesFieldsController#show (for 127.0.0.1 at 2010-07-21 09:20:41) [GET]
+  Parameters: {"notice"=>"ResourcesField was successfully updated.", "id"=>"7", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 7 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/show
+Completed in 21ms (View: 8, DB: 1) | 200 OK [http://localhost/resources_tables/2/resources_fields/7?notice=ResourcesField+was+successfully+updated.]
+
+
+Processing ResourcesFieldsController#index (for 127.0.0.1 at 2010-07-21 09:20:42) [GET]
+  Parameters: {"resources_table_id"=>"2"}
+Rendering template within layouts/resources_fields
+Rendering resources_fields/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/resources_fields/index.html.erb:
+6:     <th>Name</th>
+7:   </tr>
+8: 
+9: <% @resources_fields.each do |resources_field| %>
+10:   <tr>
+11:     <td><%=h resources_field.resources_table_id %></td>
+12:     <td><%=h resources_field.name %></td>
+
+    app/views/resources_fields/index.html.erb:9
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (105.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:20:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.4ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#edit (for 127.0.0.1 at 2010-07-21 09:21:18) [GET]
+  Parameters: {"id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.5ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/edit
+Completed in 28ms (View: 9, DB: 1) | 200 OK [http://localhost/resources_tables/2/resources_fields/5/edit]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:21:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 95ms (View: 84, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:22:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+
+ActionView::TemplateError (undefined local variable or method `resources_field' for #<ActionView::Base:0x7f4d2b70f038>) on line #13 of app/views/resources_tables/show.html.erb:
+10:   <%= f.resources_table_id %>
+11:   <b>Field Name:</b>
+12:   <%=h f.name %>
+13:   <%= link_to 'Show', resources_table_resources_field_path(@resources_table, resources_field) %>
+14:   <%= link_to 'Edit', edit_resources_table_resources_field_path(@resources_table, f) %>
+15:   <%= link_to 'Destroy', resources_table_resources_field_path(@resources_table, f), :confirm => 'Are you sure?', :method => :delete %>
+16:   <br/>
+
+    app/views/resources_tables/show.html.erb:13
+    app/views/resources_tables/show.html.erb:6
+    app/controllers/resources_tables_controller.rb:18:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:22:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 28ms (View: 20, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#show (for 127.0.0.1 at 2010-07-21 09:22:32) [GET]
+  Parameters: {"id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/show
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/resources_tables/2/resources_fields/5]
+
+
+Processing ResourcesFieldsController#edit (for 127.0.0.1 at 2010-07-21 09:23:08) [GET]
+  Parameters: {"id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/edit
+Completed in 24ms (View: 8, DB: 1) | 200 OK [http://localhost/resources_tables/2/resources_fields/5/edit]
+
+
+Processing ResourcesFieldsController#index (for 127.0.0.1 at 2010-07-21 09:23:09) [GET]
+  Parameters: {"resources_table_id"=>"2"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, destroy, edit, new, show, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:23:51) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.4ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.7ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 96ms (View: 17, DB: 1) | 200 OK [http://localhost/resources_tables/2/]
+
+
+Processing ResourcesFieldsController#new (for 127.0.0.1 at 2010-07-21 09:23:52) [GET]
+  Parameters: {"resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/new
+Completed in 21ms (View: 6, DB: 0) | 200 OK [http://localhost/resources_tables/2/resources_fields/new]
+
+
+Processing ResourcesFieldsController#index (for 127.0.0.1 at 2010-07-21 09:23:53) [GET]
+  Parameters: {"resources_table_id"=>"2"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, destroy, edit, new, show, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 09:25:28) [GET]
+  [4;36;1mResourcesTable Load (0.8ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 22ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:25:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 88ms (View: 81, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#show (for 127.0.0.1 at 2010-07-21 09:26:08) [GET]
+  Parameters: {"id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/show
+Completed in 21ms (View: 8, DB: 1) | 200 OK [http://localhost/resources_tables/2/resources_fields/5]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:26:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 23ms (View: 16, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#show (for 127.0.0.1 at 2010-07-21 09:26:38) [GET]
+  Parameters: {"id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/show
+Completed in 22ms (View: 6, DB: 1) | 200 OK [http://localhost/resources_tables/2/resources_fields/5]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:26:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.4ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 108ms (View: 28, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#show (for 127.0.0.1 at 2010-07-21 09:26:43) [GET]
+  Parameters: {"id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/show
+Completed in 16ms (View: 3, DB: 1) | 200 OK [http://localhost/resources_tables/2/resources_fields/5]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:26:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 23ms (View: 16, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#edit (for 127.0.0.1 at 2010-07-21 09:26:46) [GET]
+  Parameters: {"id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/edit
+Completed in 23ms (View: 12, DB: 0) | 200 OK [http://localhost/resources_tables/2/resources_fields/5/edit]
+
+
+Processing ResourcesFieldsController#show (for 127.0.0.1 at 2010-07-21 09:26:48) [GET]
+  Parameters: {"id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/show
+Completed in 16ms (View: 4, DB: 1) | 200 OK [http://localhost/resources_tables/2/resources_fields/5]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:26:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 23ms (View: 16, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#new (for 127.0.0.1 at 2010-07-21 09:26:54) [GET]
+  Parameters: {"resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/new
+Completed in 22ms (View: 10, DB: 0) | 200 OK [http://localhost/resources_tables/2/resources_fields/new]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:26:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.5ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 91ms (View: 84, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#new (for 127.0.0.1 at 2010-07-21 09:26:56) [GET]
+  Parameters: {"resources_table_id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/new
+Completed in 19ms (View: 6, DB: 0) | 200 OK [http://localhost/resources_tables/2/resources_fields/new]
+
+
+Processing ResourcesFieldsController#create (for 127.0.0.1 at 2010-07-21 09:27:03) [POST]
+  Parameters: {"commit"=>"Create", "resources_field"=>{"name"=>"Mobile"}, "authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Create (0.3ms)[0m   [0;1mINSERT INTO "resources_fields" ("name", "created_at", "updated_at", "resources_table_id") VALUES('Mobile', '2010-07-21 01:27:03', '2010-07-21 01:27:03', 2)[0m
+Redirected to http://localhost:3000/resources_tables/2
+Completed in 119ms (DB: 1) | 302 Found [http://localhost/resources_tables/2/resources_fields]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:27:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.4ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 37ms (View: 29, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#destroy (for 127.0.0.1 at 2010-07-21 09:27:07) [DELETE]
+  Parameters: {"authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "id"=>"13", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 13) [0m
+  [4;35;1mResourcesField Destroy (9.6ms)[0m   [0mDELETE FROM "resources_fields" WHERE "id" = 13[0m
+Redirected to http://localhost:3000/resources_tables/2/resources_fields
+Completed in 219ms (DB: 10) | 302 Found [http://localhost/resources_tables/2/resources_fields/13]
+
+
+Processing ResourcesFieldsController#index (for 127.0.0.1 at 2010-07-21 09:27:07) [GET]
+  Parameters: {"resources_table_id"=>"2"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, destroy, edit, new, show, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ResourcesFieldsController#index (for 127.0.0.1 at 2010-07-21 09:28:57) [GET]
+  Parameters: {"resources_table_id"=>"2"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, destroy, edit, new, show, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:29:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.7ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 32ms (View: 21, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#new (for 127.0.0.1 at 2010-07-21 09:29:03) [GET]
+  Parameters: {"resources_table_id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/new
+Completed in 18ms (View: 6, DB: 0) | 200 OK [http://localhost/resources_tables/2/resources_fields/new]
+
+
+Processing ResourcesFieldsController#create (for 127.0.0.1 at 2010-07-21 09:29:08) [POST]
+  Parameters: {"commit"=>"Create", "resources_field"=>{"name"=>"Mobile"}, "authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Create (0.3ms)[0m   [0;1mINSERT INTO "resources_fields" ("name", "created_at", "updated_at", "resources_table_id") VALUES('Mobile', '2010-07-21 01:29:08', '2010-07-21 01:29:08', 2)[0m
+Redirected to http://localhost:3000/resources_tables/2
+Completed in 193ms (DB: 1) | 302 Found [http://localhost/resources_tables/2/resources_fields]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:29:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 38ms (View: 30, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#destroy (for 127.0.0.1 at 2010-07-21 09:29:12) [DELETE]
+  Parameters: {"authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "id"=>"14", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 14) [0m
+  [4;35;1mResourcesField Destroy (0.2ms)[0m   [0mDELETE FROM "resources_fields" WHERE "id" = 14[0m
+Redirected to http://localhost:3000/resources_tables/2
+Completed in 108ms (DB: 1) | 302 Found [http://localhost/resources_tables/2/resources_fields/14]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:29:12) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.6ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#new (for 127.0.0.1 at 2010-07-21 09:29:25) [GET]
+  Parameters: {"resources_table_id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/new
+Completed in 84ms (View: 7, DB: 0) | 200 OK [http://localhost/resources_tables/2/resources_fields/new]
+
+
+Processing ResourcesFieldsController#create (for 127.0.0.1 at 2010-07-21 09:29:29) [POST]
+  Parameters: {"commit"=>"Create", "resources_field"=>{"name"=>"Mobile"}, "authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.5ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Create (0.3ms)[0m   [0;1mINSERT INTO "resources_fields" ("name", "created_at", "updated_at", "resources_table_id") VALUES('Mobile', '2010-07-21 01:29:29', '2010-07-21 01:29:29', 2)[0m
+Redirected to http://localhost:3000/resources_tables/2
+Completed in 96ms (DB: 1) | 302 Found [http://localhost/resources_tables/2/resources_fields]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:29:29) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.7ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 37ms (View: 28, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#destroy (for 127.0.0.1 at 2010-07-21 09:29:31) [DELETE]
+  Parameters: {"authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "id"=>"15", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 15) [0m
+  [4;35;1mResourcesField Destroy (0.2ms)[0m   [0mDELETE FROM "resources_fields" WHERE "id" = 15[0m
+Redirected to http://localhost:3000/resources_tables/2
+Completed in 147ms (DB: 1) | 302 Found [http://localhost/resources_tables/2/resources_fields/15]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:29:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.6ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 98ms (View: 90, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#new (for 127.0.0.1 at 2010-07-21 09:29:33) [GET]
+  Parameters: {"resources_table_id"=>"2"}
+  [4;36;1mResourcesTable Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/new
+Completed in 19ms (View: 6, DB: 0) | 200 OK [http://localhost/resources_tables/2/resources_fields/new]
+
+
+Processing ResourcesFieldsController#create (for 127.0.0.1 at 2010-07-21 09:29:36) [POST]
+  Parameters: {"commit"=>"Create", "resources_field"=>{"name"=>"Mobile"}, "authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Create (0.3ms)[0m   [0;1mINSERT INTO "resources_fields" ("name", "created_at", "updated_at", "resources_table_id") VALUES('Mobile', '2010-07-21 01:29:36', '2010-07-21 01:29:36', 2)[0m
+Redirected to http://localhost:3000/resources_tables/2
+Completed in 114ms (DB: 1) | 302 Found [http://localhost/resources_tables/2/resources_fields]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:29:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.8ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 37ms (View: 28, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 09:32:29) [GET]
+  [4;35;1mResourcesTable Load (10.0ms)[0m   [0mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 82ms (View: 11, DB: 10) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:32:35) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.6ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 26ms (View: 19, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 09:32:40) [GET]
+  [4;36;1mResourcesTable Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#edit (for 127.0.0.1 at 2010-07-21 09:32:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/edit
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/resources_tables/2/edit]
+
+
+Processing ResourcesTablesController#update (for 127.0.0.1 at 2010-07-21 09:32:48) [PUT]
+  Parameters: {"resources_table"=>{"name"=>"Contacts"}, "commit"=>"Update", "authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;35;1mResourcesTable Update (0.3ms)[0m   [0mUPDATE "resources_tables" SET "updated_at" = '2010-07-21 01:32:48', "name" = 'Contacts' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/resources_tables/2
+Completed in 132ms (DB: 1) | 302 Found [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:32:49) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.5ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 27ms (View: 19, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 09:33:03) [GET]
+  [4;36;1mResourcesTable Load (0.7ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:33:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:33:14) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 3) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 3) [0m
+Completed in 85ms (View: 78, DB: 1) | 200 OK [http://localhost/resources_tables/3]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:33:17) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 4) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 4) [0m
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://localhost/resources_tables/4]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:33:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 25ms (View: 19, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#edit (for 127.0.0.1 at 2010-07-21 09:34:45) [GET]
+  Parameters: {"id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/edit
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/resources_tables/2/resources_fields/5/edit]
+
+
+Processing ResourcesFieldsController#edit (for 127.0.0.1 at 2010-07-21 09:35:01) [GET]
+  Parameters: {"id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/edit
+Completed in 119ms (View: 22, DB: 1) | 200 OK [http://localhost/resources_tables/2/resources_fields/5/edit]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:35:05) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:35:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 27ms (View: 20, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#edit (for 127.0.0.1 at 2010-07-21 09:35:46) [GET]
+  Parameters: {"id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/edit
+Completed in 90ms (View: 78, DB: 1) | 200 OK [http://localhost/resources_tables/2/resources_fields/5/edit]
+
+
+Processing ResourcesFieldsController#edit (for 127.0.0.1 at 2010-07-21 09:35:55) [GET]
+  Parameters: {"id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/edit
+Completed in 22ms (View: 11, DB: 1) | 200 OK [http://localhost/resources_tables/2/resources_fields/5/edit]
+
+
+Processing ResourcesFieldsController#update (for 127.0.0.1 at 2010-07-21 09:35:57) [PUT]
+  Parameters: {"commit"=>"Update", "resources_field"=>{"name"=>"First Name"}, "authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5) [0m
+Redirected to http://localhost:3000/resources_tables/2/resources_fields/5?notice=ResourcesField+was+successfully+updated.
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/resources_tables/2/resources_fields/5]
+
+
+Processing ResourcesFieldsController#show (for 127.0.0.1 at 2010-07-21 09:35:57) [GET]
+  Parameters: {"notice"=>"ResourcesField was successfully updated.", "id"=>"5", "resources_table_id"=>"2"}
+Rendering template within layouts/resources_fields
+Rendering resources_fields/show
+
+ActionView::TemplateError (undefined method `resources_table_id' for nil:NilClass) on line #3 of app/views/resources_fields/show.html.erb:
+1: <p>
+2:   <b>Resources table:</b>
+3:   <%=h @resources_field.resources_table_id %>
+4: </p>
+5: 
+6: <p>
+
+    app/views/resources_fields/show.html.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (117.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ResourcesFieldsController#update (for 127.0.0.1 at 2010-07-21 09:37:11) [PUT]
+  Parameters: {"commit"=>"Update", "resources_field"=>{"name"=>"First Name"}, "authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "id"=>"5", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 5) [0m
+Redirected to http://localhost:3000/resources_tables/2
+Completed in 17ms (DB: 0) | 302 Found [http://localhost/resources_tables/2/resources_fields/5]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:37:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.7ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 25ms (View: 17, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#edit (for 127.0.0.1 at 2010-07-21 09:37:16) [GET]
+  Parameters: {"id"=>"16", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 16 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/edit
+Completed in 20ms (View: 8, DB: 0) | 200 OK [http://localhost/resources_tables/2/resources_fields/16/edit]
+
+
+Processing ResourcesFieldsController#update (for 127.0.0.1 at 2010-07-21 09:37:20) [PUT]
+  Parameters: {"commit"=>"Update", "resources_field"=>{"name"=>"Mobile Number"}, "authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "id"=>"16", "resources_table_id"=>"2"}
+  [4;35;1mResourcesTable Load (0.4ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 16) [0m
+  [4;35;1mResourcesField Update (0.3ms)[0m   [0mUPDATE "resources_fields" SET "updated_at" = '2010-07-21 01:37:20', "name" = 'Mobile Number' WHERE "id" = 16[0m
+Redirected to http://localhost:3000/resources_tables/2
+Completed in 209ms (DB: 1) | 302 Found [http://localhost/resources_tables/2/resources_fields/16]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:37:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (1.0ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 32ms (View: 24, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-21 09:39:35) [POST]
+
+ActionController::RoutingError (No route matches "/home/grab_list" with {:method=>:post}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:44:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.5ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 100ms (View: 31, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:44:29) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.5ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 27ms (View: 20, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:46:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.6ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:47:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.5ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 31ms (View: 21, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#new (for 127.0.0.1 at 2010-07-21 09:47:21) [GET]
+  Parameters: {"resources_table_id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/new
+Completed in 25ms (View: 13, DB: 0) | 200 OK [http://localhost/resources_tables/2/resources_fields/new]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:47:28) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 27ms (View: 20, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:47:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 09:47:46) [GET]
+  [4;35;1mResourcesTable Load (0.7ms)[0m   [0mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 24ms (View: 14, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:47:47) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.5ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 24ms (View: 18, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 09:47:48) [GET]
+  [4;36;1mResourcesTable Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:47:49) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 3) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 3) [0m
+Completed in 23ms (View: 16, DB: 1) | 200 OK [http://localhost/resources_tables/3]
+
+
+Processing ResourcesFieldsController#index (for 127.0.0.1 at 2010-07-21 09:48:11) [GET]
+  Parameters: {"resources_table_id"=>"3"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, destroy, edit, new, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ResourcesTablesController#edit (for 127.0.0.1 at 2010-07-21 09:48:25) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 3) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/edit
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/resources_tables/3/edit]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 09:48:27) [GET]
+  [4;36;1mResourcesTable Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:49:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 39ms (View: 22, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:49:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 27ms (View: 20, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 09:49:47) [GET]
+  [4;35;1mResourcesTable Load (0.5ms)[0m   [0mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 09:49:51) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.5ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 86ms (View: 79, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 09:49:53) [GET]
+  [4;36;1mResourcesTable Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#edit (for 127.0.0.1 at 2010-07-21 09:49:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/edit
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/resources_tables/2/edit]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 09:49:55) [GET]
+  [4;36;1mResourcesTable Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 19ms (View: 10, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#edit (for 127.0.0.1 at 2010-07-21 09:49:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/edit
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/resources_tables/2/edit]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 09:49:58) [GET]
+  [4;36;1mResourcesTable Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 82ms (View: 11, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:12:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 28ms (View: 18, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:15:39) [GET]
+  [4;35;1mResourcesTable Load (0.5ms)[0m   [0mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:15:41) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 4) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.5ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 4) [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/resources_tables/4]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:15:46) [GET]
+  [4;36;1mResourcesTable Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 85ms (View: 79, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#destroy (for 127.0.0.1 at 2010-07-21 10:15:50) [DELETE]
+  Parameters: {"authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "id"=>"4"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 4) [0m
+  [4;36;1mResourcesTable Destroy (0.5ms)[0m   [0;1mDELETE FROM "resources_tables" WHERE "id" = 4[0m
+Redirected to http://localhost:3000/resources_tables
+Completed in 108ms (DB: 1) | 302 Found [http://localhost/resources_tables/4]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:15:50) [GET]
+  [4;35;1mResourcesTable Load (0.8ms)[0m   [0mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#new (for 127.0.0.1 at 2010-07-21 10:16:38) [GET]
+Rendering template within layouts/resources_tables
+Rendering resources_tables/new
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/resources_tables/new]
+
+
+Processing ResourcesTablesController#create (for 127.0.0.1 at 2010-07-21 10:16:42) [POST]
+  Parameters: {"resources_table"=>{"name"=>"General Notes"}, "commit"=>"Create", "authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA="}
+  [4;36;1mResourcesTable Create (0.3ms)[0m   [0;1mINSERT INTO "resources_tables" ("name", "created_at", "updated_at") VALUES('General Notes', '2010-07-21 02:16:42', '2010-07-21 02:16:42')[0m
+Redirected to http://localhost:3000/resources_tables/5
+Completed in 106ms (DB: 0) | 302 Found [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:16:42) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 5) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 5) [0m
+Completed in 94ms (View: 85, DB: 0) | 200 OK [http://localhost/resources_tables/5]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:16:58) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mResourcesTable Load (0.1ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 5) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find ResourcesTable with ID=5):
+  app/controllers/resources_tables_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.4ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:17:01) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mResourcesTable Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 4) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.5ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 4) [0m
+Completed in 27ms (View: 18, DB: 1) | 200 OK [http://localhost/resources_tables/4]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:17:04) [GET]
+  [4;36;1mResourcesTable Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:18:27) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 4) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 4) [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/resources_tables/4]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:21:46) [GET]
+  [4;35;1mResourcesTable Load (0.6ms)[0m   [0mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:21:47) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 4) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.5ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 4) [0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://localhost/resources_tables/4]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:21:48) [GET]
+  [4;36;1mResourcesTable Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 23ms (View: 17, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:22:21) [GET]
+  [4;35;1mResourcesTable Load (0.6ms)[0m   [0mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 26ms (View: 19, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#destroy (for 127.0.0.1 at 2010-07-21 10:22:24) [DELETE]
+  Parameters: {"authenticity_token"=>"HtEWbd1BwEww/1yI88uaj252WRk+hY4SHia55jBGtMA=", "id"=>"4"}
+  [4;36;1mResourcesTable Load (0.4ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 4) [0m
+  [4;35;1mResourcesField Delete all (0.3ms)[0m   [0mDELETE FROM "resources_fields" WHERE ((resources_table_id = 4)) [0m
+  [4;36;1mResourcesTable Destroy (0.1ms)[0m   [0;1mDELETE FROM "resources_tables" WHERE "id" = 4[0m
+Redirected to http://localhost:3000/resources_tables
+Completed in 92ms (DB: 1) | 302 Found [http://localhost/resources_tables/4]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:22:24) [GET]
+  [4;35;1mResourcesTable Load (0.6ms)[0m   [0mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:22:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.5ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 24ms (View: 17, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:22:55) [GET]
+  [4;36;1mResourcesTable Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:22:56) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 3) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 3) [0m
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/resources_tables/3]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:22:57) [GET]
+  [4;35;1mResourcesTable Load (0.5ms)[0m   [0mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:24:03) [GET]
+  [4;36;1mResourcesTable Load (0.7ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:24:12) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (1.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 93ms (View: 84, DB: 2) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:24:14) [GET]
+  [4;35;1mResourcesTable Load (0.5ms)[0m   [0mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:24:15) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mResourcesTable Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 3) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.6ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 3) [0m
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://localhost/resources_tables/3]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:24:16) [GET]
+  [4;36;1mResourcesTable Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:24:18) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 3) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 3) [0m
+Completed in 90ms (View: 80, DB: 1) | 200 OK [http://localhost/resources_tables/3]
+
+
+Processing ResourcesFieldsController#edit (for 127.0.0.1 at 2010-07-21 10:24:19) [GET]
+  Parameters: {"id"=>"8", "resources_table_id"=>"3"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 3) [0m
+  [4;36;1mResourcesField Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 8 AND ("resources_fields".resources_table_id = 3)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/edit
+Completed in 27ms (View: 11, DB: 1) | 200 OK [http://localhost/resources_tables/3/resources_fields/8/edit]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:24:21) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 3) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 3) [0m
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/resources_tables/3]
+
+
+Processing ResourcesFieldsController#edit (for 127.0.0.1 at 2010-07-21 10:24:28) [GET]
+  Parameters: {"id"=>"8", "resources_table_id"=>"3"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 3) [0m
+  [4;36;1mResourcesField Load (0.3ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 8 AND ("resources_fields".resources_table_id = 3)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/edit
+Completed in 19ms (View: 8, DB: 0) | 200 OK [http://localhost/resources_tables/3/resources_fields/8/edit]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:24:29) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mResourcesTable Load (0.3ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 3) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 3) [0m
+Completed in 93ms (View: 17, DB: 1) | 200 OK [http://localhost/resources_tables/3]
+
+
+Processing ResourcesFieldsController#new (for 127.0.0.1 at 2010-07-21 10:24:32) [GET]
+  Parameters: {"resources_table_id"=>"3"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 3) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/new
+Completed in 19ms (View: 6, DB: 0) | 200 OK [http://localhost/resources_tables/3/resources_fields/new]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:24:34) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 3) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.5ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 3) [0m
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/resources_tables/3]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:24:35) [GET]
+  [4;36;1mResourcesTable Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:24:36) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 3) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 3) [0m
+Completed in 87ms (View: 17, DB: 1) | 200 OK [http://localhost/resources_tables/3]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:24:37) [GET]
+  [4;35;1mResourcesTable Load (0.5ms)[0m   [0mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:25:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.6ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 25ms (View: 17, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesFieldsController#edit (for 127.0.0.1 at 2010-07-21 10:25:04) [GET]
+  Parameters: {"id"=>"6", "resources_table_id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+  [4;35;1mResourcesField Load (0.3ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields"."id" = 6 AND ("resources_fields".resources_table_id = 2)) [0m
+Rendering template within layouts/resources_fields
+Rendering resources_fields/edit
+Completed in 19ms (View: 8, DB: 0) | 200 OK [http://localhost/resources_tables/2/resources_fields/6/edit]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:25:05) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mResourcesTable Load (0.2ms)[0m   [0;1mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;35;1mResourcesField Load (0.5ms)[0m   [0mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 99ms (View: 20, DB: 1) | 200 OK [http://localhost/resources_tables/2]
+
+
+Processing ResourcesTablesController#index (for 127.0.0.1 at 2010-07-21 10:25:07) [GET]
+  [4;36;1mResourcesTable Load (0.5ms)[0m   [0;1mSELECT * FROM "resources_tables" [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/index
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/resources_tables]
+
+
+Processing ResourcesTablesController#show (for 127.0.0.1 at 2010-07-21 10:25:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mResourcesTable Load (0.2ms)[0m   [0mSELECT * FROM "resources_tables" WHERE ("resources_tables"."id" = 2) [0m
+Rendering template within layouts/resources_tables
+Rendering resources_tables/show
+  [4;36;1mResourcesField Load (0.6ms)[0m   [0;1mSELECT * FROM "resources_fields" WHERE ("resources_fields".resources_table_id = 2) [0m
+Completed in 25ms (View: 17, DB: 1) | 200 OK [http://localhost/resources_tables/2]

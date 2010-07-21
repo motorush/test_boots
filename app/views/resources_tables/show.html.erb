@@ -1,18 +1,17 @@
 <p>
   <b>Name:</b>
-  <%=h @resources_table.name %>
+  <%=h link_to @resources_table.name, edit_resources_table_path(@resources_table) %>
 </p>
-<h2>Fields</h2>
-<% @resources_table.resources_fields.each do |f| %>
-  <b>ID</b>
-  <%= f.id %>
-  <b>Resource Table ID</b>
-  <%= f.resources_table_id %>
-  <b>Field Name:</b>
-  <%=h f.name %>
-  <br/>
-<% end %>
+<table>
+  <thead>
+  <% @resources_table.resources_fields.each do |f| %>
+    <th>
+    <%=h link_to f.name, edit_resources_table_resources_field_path(@resources_table, f) %>
+    <%=h link_to 'X', resources_table_resources_field_path(@resources_table, f), :confirm => 'This will destroy the entire field. Are you sure?', :method => :delete %> |
+    </th>
+  <% end %>
+    <th><%=h link_to '+', new_resources_table_resources_field_path(@resources_table) %></th>
+  </thead>
+</table>
 <br/>
-<%= link_to 'Edit', edit_resources_table_path(@resources_table) %> |
-<%= link_to 'Back', resources_tables_path %> |
-<%= link_to 'Manage Resources Fields', resources_table_resources_fields_path(@resources_table) %>
+<%= link_to 'Return to index', resources_tables_path %>

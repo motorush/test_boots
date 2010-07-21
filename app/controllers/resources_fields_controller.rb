@@ -1,27 +1,4 @@
 class ResourcesFieldsController < ApplicationController
-  # GET /resources_fields
-  # GET /resources_fields.xml
-  def index
-    @resources_table = ResourcesTable.find(params[:resources_table_id])
-    @resources_fields = @resources_table.resources_fields
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @resources_fields }
-    end
-  end
-
-  # GET /resources_fields/1
-  # GET /resources_fields/1.xml
-  def show
-    @resources_table = ResourcesTable.find(params[:resources_table_id])
-    @resources_field = @resources_table.resources_fields.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @resources_field }
-    end
-  end
 
   # GET /resources_fields/new
   # GET /resources_fields/new.xml
@@ -66,7 +43,7 @@ class ResourcesFieldsController < ApplicationController
 
     respond_to do |format|
       if @resources_field.update_attributes(params[:resources_field])
-        format.html { redirect_to resources_table_resources_field_url(@resources_table, @resources_field, :notice => 'ResourcesField was successfully updated.') }
+        format.html { redirect_to(@resources_table, :notice => 'ResourcesField was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -83,7 +60,7 @@ class ResourcesFieldsController < ApplicationController
     @resources_field.destroy
 
     respond_to do |format|
-      format.html { redirect_to resources_table_resources_fields_path(@resources_table) }
+      format.html { redirect_to(@resources_table, :notice => 'ResourcesField was successfully destroyed.') }
       format.xml  { head :ok }
     end
   end

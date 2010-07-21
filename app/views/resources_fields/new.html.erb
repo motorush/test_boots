@@ -4,10 +4,6 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :resources_table_id %><br />
-    <%= f.text_field :resources_table_id %>
-  </p>
-  <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
@@ -16,4 +12,4 @@
   </p>
 <% end %>
 
-<%= link_to 'Back', resources_table_resources_fields_path %>
+<%= link_to 'Back', @resources_table %>
